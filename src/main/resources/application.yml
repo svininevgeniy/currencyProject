@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/currency_db?currentSchema=currency_app
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: currency_app
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    schemas: currency_app
+    enabled: true
+    locations: classpath:db/migration
+    placeholders:
+      defaultLimit: 10000.00

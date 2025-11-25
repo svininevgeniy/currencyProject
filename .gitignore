@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 
 .idea/
+.mvn/
 *.iws
 *.iml
 *.ipr
